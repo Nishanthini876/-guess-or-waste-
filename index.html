@@ -1,0 +1,76 @@
+
+<head>
+    <title>
+      Guess or Waste
+    </title>
+  </head>
+  <link rel="icon" href="nisha.png">
+  
+  <style>
+    
+    body {
+      font-family: 'Arial', sans-serif;
+      background: linear-gradient(to right, #ffecd2, #fcb69f);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+  }
+  
+  h1 {
+      color: #ff6b6b;
+      text-shadow: 2px 2px #ffe66d;
+  }
+  
+  input {
+      padding: 10px;
+      margin: 10px 0;
+      border-radius: 5px;
+      border: 1px solid #fdcb6e;
+      font-size: 16px;
+      background-color: #ffeaa7;
+      color: #2d3436;
+  }
+  
+  button {
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      background-color: #74b9ff;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+      margin-top: 10px;
+      transition: background-color 0.3s ease;
+  }
+  
+  button:hover {
+      background
+  </style>
+  <h1>Guess the Number from 1 to 10</h1>
+  <input id="guessnumber" type="number" min="1" max="10">
+  <button onclick="check()">Check</button>
+  <p id="result"></p>
+  <p id="score">Score: 10</p>
+  <script>
+    var guessnumber = document.getElementById("guessnumber");
+    var result = document.getElementById("result");
+    var score = document.getElementById("score");
+    var randomnumber = Math.floor(Math.random() * 10) + 1;
+    var totalscore = 10;
+  
+    function check() {
+      var enternumber = parseInt(guessnumber.value);
+      if (randomnumber === enternumber) {
+        result.textContent = "Right! You guessed it!";
+        alert("YOU WON.....");
+      } else {
+        totalscore = totalscore - 1;
+        score.textContent = "Score: " + totalscore;
+        result.textContent = "Wrong! Try again.";
+      }
+    }
+  </script>
+  
